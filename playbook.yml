@@ -4,6 +4,7 @@
   tasks:
 
   - include: tasks/management.yml
+  - include: tasks/users.yml
 
   - name: Copy deluged conf file
     copy:
