@@ -13,3 +13,20 @@
     home: /var/lib/deluge
     system: yes
     group: deluge
+
+- name: Create regular user
+  user:
+    name: kevin
+    shell: /usr/bin/zsh
+    groups: deluge
+
+- name: Create user's ssh directory owned by the user
+  file:
+    path: /home/kevin/.ssh
+    owner: kevin
+    state: directory
+
+- name: Copy root's ssh authorized keys
+  shell: cat /root/.ssh/authorized_keys >> /home/kevin/.ssh/authorized_keys
+  args:
+    creates: /home/kevin/.ssh/authorized_keys
