@@ -19,6 +19,8 @@
      - deluge
      - deluged
      - deluge-web
+    notify:
+    - restart deluged
 
   - name: Create deluge group
     group:
@@ -31,3 +33,24 @@
       home: /var/lib/deluge
       system: yes
       group: deluge
+
+  - name: Copy deluged conf file
+    copy:
+      src: conf/deluged.conf
+      dest: /etc/init/deluged.conf
+    notify:
+    - restart deluged
+
+  - name: Copy deluge web conf file
+    copy:
+      src: conf/deluge-web.conf
+      dest: /etc/init/deluge-web.conf
+    notify:
+    - restart deluged
+
+  - name: ensure deluged is running (and enable it at boot)
+    service: name=deluged state=started enabled=yes
+
+  handlers:
+    - name: restart deluged
+      service: name=deluged state=restarted
