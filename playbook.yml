@@ -19,3 +19,15 @@
      - deluge
      - deluged
      - deluge-web
+
+  - name: Create deluge group
+    group:
+      name: deluge
+      state: present
+
+  - name: Create deluge user
+    user:
+      name: deluge
+      home: /var/lib/deluge
+      system: yes
+      group: deluge
