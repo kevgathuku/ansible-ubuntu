@@ -34,8 +34,9 @@
 - name: Install oh my zsh
   remote_user: kevin
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  ignore_errors: True
   args:
-    creates: /home/kevin/.zsh-update
+    creates: /home/kevin/.oh-my-zsh/
 
 - name: Install dropbox CLI on the server
   remote_user: kevin
