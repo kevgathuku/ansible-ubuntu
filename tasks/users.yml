@@ -36,3 +36,10 @@
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   args:
     creates: /home/kevin/.zsh-update
+
+- name: Install dropbox CLI on the server
+  remote_user: kevin
+  shell: wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+  args:
+    chdir: /home/kevin/
+    creates: /home/kevin/.dropbox-dist/dropboxd
