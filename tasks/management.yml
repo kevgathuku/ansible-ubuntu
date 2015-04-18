@@ -2,11 +2,8 @@
 
 # Management tasks like upgrading the distro, etc.
 
-- name: update apt cache
-  apt: update_cache=yes cache_valid_time=3600
-
 - name: upgrade the distro
-  apt: upgrade=yes
+  apt: update_cache=yes cache_valid_time=3600 upgrade=yes
 
 - name: Add Deluge repo
   apt_repository: repo=ppa:deluge-team/ppa
