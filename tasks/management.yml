@@ -1,0 +1,34 @@
+---
+
+# Management tasks like upgrading the distro, etc.
+
+- name: update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: upgrade the distro
+  apt: upgrade=yes
+
+- name: Add Deluge repo
+  apt_repository: repo=ppa:deluge-team/ppa
+
+- name: install packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+   - zsh
+   - deluge
+   - deluged
+   - deluge-web
+  notify:
+  - restart deluged
+
+- name: Create deluge group
+  group:
+    name: deluge
+    state: present
+
+- name: Create deluge user
+  user:
+    name: deluge
+    home: /var/lib/deluge
+    system: yes
+    group: deluge
