@@ -43,3 +43,22 @@
   args:
     chdir: /home/kevin/
     creates: /home/kevin/.dropbox-dist/dropboxd
+
+- name: Create bin directory in user's home folder
+  file:
+    path: /home/kevin/bin
+    owner: kevin
+    state: directory
+
+- name: Install Python Dropbox CLI utility script
+  remote_user: kevin
+  get_url:
+    url: https://www.dropbox.com/download?dl=packages/dropbox.py
+    dest: /home/kevin/bin/
+
+- name: Make Dropbox Python script executable
+  remote_user: kevin
+  file:
+    path: /home/kevin/bin/dropbox.py
+    owner: kevin
+    mode: 0755
