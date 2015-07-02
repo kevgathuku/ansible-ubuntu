@@ -1,7 +1,7 @@
 # ansible-deluge
 Spin up a torrenting server running Deluge in the cloud using ansible
 
-** This is now eprecated in favour of the [AtoMiC-ToolKit](https://github.com/htpcBeginner/AtoMiC-ToolKit)**
+**This is now deprecated in favour of the [AtoMiC-ToolKit](https://github.com/htpcBeginner/AtoMiC-ToolKit)**
 
 # How it Works
 The general idea is that given a server in the cloud e.g. on DigitalOcean and you would like to install Deluge on it,    
