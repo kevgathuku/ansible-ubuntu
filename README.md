@@ -15,8 +15,8 @@ First, Ansible needs to be installed, preferrably in a virtualenv. Let's do that
 `mkvirtualenv torrent`
 - Activate the virtualenv    
 `workon torrent`
-- Install Ansible    
-`pip install ansible`
+- Install the requirements    
+`pip install -r requirements.txt`
 
 # Usage Instructions
 
