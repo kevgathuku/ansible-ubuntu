@@ -10,3 +10,5 @@
   with_items:
    - git
    - zsh
+   - ruby-dev
+   - stow
