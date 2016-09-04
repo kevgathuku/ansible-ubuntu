@@ -5,16 +5,8 @@
 - name: upgrade the distro
   apt: update_cache=yes cache_valid_time=3600 upgrade=yes
 
-- name: Add Deluge repo
-  apt_repository: repo=ppa:deluge-team/ppa
-
 - name: install packages
   apt: pkg={{ item }} state=latest
   with_items:
    - git
    - zsh
-   - deluge
-   - deluged
-   - deluge-web
-  notify:
-  - restart deluged
