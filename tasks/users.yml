@@ -40,6 +40,6 @@
 
 - name: Create bin directory in user's home folder
   file:
-    path: /home/kevin/bin
+    path: /home/kevin/local/bin
     owner: kevin
     state: directory
