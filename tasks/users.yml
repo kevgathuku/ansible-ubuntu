@@ -6,7 +6,7 @@
   user:
     name: kevin
     shell: /usr/bin/zsh
-    groups: deluge
+    groups: sudo
 
 - name: Create user's ssh directory owned by the user
   file:
