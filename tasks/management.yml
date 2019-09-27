@@ -10,5 +10,9 @@
   with_items:
    - git
    - zsh
-   - ruby-dev
    - stow
+   - default-jdk
+   - vim
+   - mosh
+   - tmux
+   - make

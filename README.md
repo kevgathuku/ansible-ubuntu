@@ -13,22 +13,22 @@ Currently, this is able to automate the following:
 # Setup
 First, Ansible needs to be installed locally, preferrably in a virtualenv. Let's do that
 
-- Create a new virtual environment.    
+- Create a new virtual environment.
 `mkvirtualenv torrent`
-- Activate the virtualenv    
+- Activate the virtualenv
 `workon torrent`
-- Install the requirements    
+- Install the requirements
 `pip install -r requirements.txt`
 
 # Usage Instructions
 
-- Clone this repo    
+- Clone this repo
 `git clone https://github.com/kevgathuku/ansible-deluge`
-- Change directory into the newly-created folder     
+- Change directory into the newly-created folder
 `cd ansible-deluge`
 - Copy the `hosts.example` file to `hosts`
 `cp hosts.example hosts`
-- Open the `hosts` file and replace `127.0.0.1` with your actual server address(es)    
+- Open the `hosts` file and replace `127.0.0.1` with your actual server address(es)
 You can fill in one or more server addresses here, each in a new line.
 
 For example, a sample `hosts` file would look like this
@@ -42,4 +42,9 @@ For example, a sample `hosts` file would look like this
 When you've done this, let's finally get this running
 ```shell
 ansible-playbook -i hosts playbook.yml
+```
+
+If using `pipenv` run:
+```shell
+pipenv run ansible-playbook -i hosts playbook.yml
 ```
