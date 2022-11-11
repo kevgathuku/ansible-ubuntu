@@ -14,9 +14,9 @@ Currently, this is able to automate the following:
 First, Ansible needs to be installed locally, preferrably in a virtualenv. Let's do that
 
 - Create a new virtual environment.
-`mkvirtualenv torrent`
+`mkvirtualenv ansible`
 - Activate the virtualenv
-`workon torrent`
+`workon ansible`
 - Install the requirements
 `pip install -r requirements.txt`
 
