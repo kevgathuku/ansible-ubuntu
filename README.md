@@ -23,9 +23,9 @@ First, Ansible needs to be installed locally, preferrably in a virtualenv. Let's
 # Usage Instructions
 
 - Clone this repo
-`git clone https://github.com/kevgathuku/ansible-deluge`
+`git clone git@github.com:kevgathuku/ansible-ubuntu.git`
 - Change directory into the newly-created folder
-`cd ansible-deluge`
+`cd ansible-ubuntu`
 - Copy the `hosts.example` file to `hosts`
 `cp hosts.example hosts`
 - Open the `hosts` file and replace `127.0.0.1` with your actual server address(es)
