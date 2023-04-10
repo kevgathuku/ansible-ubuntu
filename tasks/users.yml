@@ -1,5 +1,4 @@
 ---
-
 # Tasks related to creating users and groups
 
 - name: Create regular user

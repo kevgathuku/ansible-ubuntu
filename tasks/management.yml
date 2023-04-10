@@ -1,19 +1,22 @@
 ---
-
 # Management tasks like upgrading the distro, etc.
 
 - name: upgrade the distro
-  apt: update_cache=yes cache_valid_time=3600 upgrade=yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    upgrade: yes
 
 - name: install packages
   apt: pkg={{ item }} state=latest
   with_items:
-   - git
-   - zsh
-   - stow
-   - default-jdk
-   - vim
-   - mosh
-   - tmux
-   - make
-   - xclip
+    - git
+    - zsh
+    - stow
+    - default-jdk
+    - vim
+    - mosh
+    - tmux
+    - make
+    - xclip
+    - gh
