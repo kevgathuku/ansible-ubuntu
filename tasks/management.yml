@@ -7,6 +7,11 @@
     cache_valid_time: 3600
     upgrade: yes
 
+- name: add nodesource repo for node 24 LTS
+  shell: curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+
 - name: install packages
   apt: pkg={{ item }} state=latest
   with_items:
@@ -20,3 +25,4 @@
     - make
     - xclip
     - gh
+    - nodejs
