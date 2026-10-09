@@ -35,7 +35,12 @@ For example, a sample `hosts` file would look like this
 127.0.0.2
 ```
 
-When you've done this, let's finally get this running
+When you've done this, validate the playbook syntax without connecting to any hosts:
+```shell
+pipenv run ansible-playbook -i hosts.example playbook.yml --syntax-check
+```
+
+Then let's finally get this running
 ```shell
 pipenv run ansible-playbook -i hosts playbook.yml
 ```
