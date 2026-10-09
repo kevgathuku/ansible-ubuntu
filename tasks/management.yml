@@ -26,3 +26,5 @@
     - xclip
     - gh
     - nodejs
+    - fd-find
+    - ripgrep
