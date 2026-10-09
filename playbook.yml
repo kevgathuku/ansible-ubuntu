@@ -2,9 +2,11 @@
 - hosts: main
   remote_user: root
   gather_facts: no
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.14
   pre_tasks:
-    - name: 'install python 3'
-      raw: sudo apt-get -y install python3-minimal
+    - name: 'install python 3.14 from deadsnakes PPA'
+      raw: apt-get update && apt-get -y install software-properties-common && add-apt-repository -y ppa:deadsnakes/ppa && apt-get update && apt-get -y install python3.14 python3.14-venv
   tasks:
-  - import_tasks: tasks/management.yml
-  - import_tasks: tasks/users.yml
+    - import_tasks: tasks/management.yml
+    - import_tasks: tasks/users.yml
