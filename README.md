@@ -11,14 +11,10 @@ Currently, this is able to automate the following:
 - Install a few useful packages
 
 # Setup
-First, Ansible needs to be installed locally, preferrably in a virtualenv. Let's do that
+First, Ansible needs to be installed locally. This project uses `pipenv` (see `Pipfile`) by default.
 
-- Create a new virtual environment.
-`mkvirtualenv ansible`
-- Activate the virtualenv
-`workon ansible`
-- Install the requirements
-`pip install -r requirements.txt`
+- Install the dependencies (creates the virtualenv automatically)
+`pipenv install`
 
 # Usage Instructions
 
@@ -40,11 +36,6 @@ For example, a sample `hosts` file would look like this
 ```
 
 When you've done this, let's finally get this running
-```shell
-ansible-playbook -i hosts playbook.yml
-```
-
-If using `pipenv` run:
 ```shell
 pipenv run ansible-playbook -i hosts playbook.yml
 ```
