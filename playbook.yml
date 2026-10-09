@@ -5,8 +5,15 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3.14
   pre_tasks:
-    - name: 'install python 3.14 from deadsnakes PPA'
+    - name: check if python3.14 is present
+      raw: test -x /usr/bin/python3.14
+      register: python_present
+      ignore_errors: yes
+      changed_when: false
+
+    - name: install python 3.14 from deadsnakes PPA
       raw: apt-get update && apt-get -y install software-properties-common && add-apt-repository -y ppa:deadsnakes/ppa && apt-get update && apt-get -y install python3.14 python3.14-venv
+      when: python_present is failed
   tasks:
     - import_tasks: tasks/management.yml
     - import_tasks: tasks/users.yml
